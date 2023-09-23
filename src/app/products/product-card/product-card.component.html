@@ -1,0 +1,27 @@
+<div class="card h-100">
+  <div class="btn btn-success w-25 m-2" *ngIf="product.stock > 0">in stock</div>
+  <div class="btn btn-danger w-25 m-2" *ngIf="product.stock <= 0">
+    out of stock
+  </div>
+  <img
+    [src]="product.thumbnail"
+    class="card-img-top container-fluid h-50"
+    alt="Hollywood Sign on The Hill"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <p class="card-text">
+      {{ product.description }}
+    </p>
+  </div>
+  <p>Price: {{ product.price }}</p>
+  <div>
+    <a
+      routerLink="product-details"
+      class="btn btn-dark"
+      (click)="rediredctToProductDetails(product.id)"
+      >Product Details</a
+    >
+    <button class="btn btn-dark m-2">Add to Cart</button>
+  </div>
+</div>
