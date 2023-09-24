@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './products/products.module';
 import { AuthModule } from './auth/auth.module';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

@@ -9,12 +9,12 @@ import data from '../../../assets/products-list.json';
   styleUrls: ['./product-detailes.component.css'],
 })
 export class ProductDetailesComponent {
-  activeId!: number;
+  activeId!: string;
   products: Product[] = data;
-  constructor(private activeRoute: ActivatedRoute) {
-    console.log(this.activeRoute.snapshot.params['id']);
+  selectedProduct!: Product;
+  constructor(private activeRoute: ActivatedRoute) {}
+  ngOnInit() {
     this.activeId = this.activeRoute.snapshot.params['id'];
     this.products.find((product) => product.id === this.activeId);
-    console.log(this.products.find((product) => product.id === this.activeId));
   }
 }

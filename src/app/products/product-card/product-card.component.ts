@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ProductCardComponent {
   @Input() product!: Product;
   constructor(private router: Router) {}
-  rediredctToProductDetails(id: number) {
+  rediredctToProductDetails(id: string) {
     this.router.navigate(['product-details', id]);
   }
 }
