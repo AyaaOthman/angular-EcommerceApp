@@ -12,9 +12,13 @@ export class ProductDetailesComponent {
   activeId!: string;
   products: Product[] = data;
   selectedProduct!: Product;
+  selectedProductImages!: string[];
   constructor(private activeRoute: ActivatedRoute) {}
   ngOnInit() {
     this.activeId = this.activeRoute.snapshot.params['id'];
-    this.products.find((product) => product.id === this.activeId);
+    this.selectedProduct = this.products.find(
+      (product) => product.id === this.activeId
+    ) as Product;
+    this.selectedProductImages = this.selectedProduct.images;
   }
 }
